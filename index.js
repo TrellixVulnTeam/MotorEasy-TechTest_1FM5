@@ -1,11 +1,18 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import "dotenv/config.js"
+
+
+
+
+
+
 
 const app = express()
 app.use(express.json())
 
 // connect to mongodb
-const dbURI = "mongodb+srv://administrator:motoreasy123@cluster0.keb60.mongodb.net/car-parts?retryWrites=true&w=majority"
+const dbURI = process.env.MONGO_URI
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {

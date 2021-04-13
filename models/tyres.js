@@ -30,7 +30,7 @@ const brandsSchema = new Schema({
         required: true
     },
     logo:{
-        type: String,
+        type: String
         
     }
     
