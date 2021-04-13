@@ -24,14 +24,6 @@ const tyresSchema = new Schema({
     }
 })
 
-const brandsSchema = new Schema({
-    title:{
-        type: String,
-        required: true
-    },
-    logo:{
-        type: String
-        
-    }
-    
-})
+export const Tyre = mongoose.model('Tyre', tyresSchema)
+
+
