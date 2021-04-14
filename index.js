@@ -33,6 +33,8 @@ app.get('/tyres', (req, res) => {
     })
 })
 
+app.get()
+
 app.get('/add-tyre', (req, res) =>{
     const tyre = new Tyre({
         brand: 'Avon',
