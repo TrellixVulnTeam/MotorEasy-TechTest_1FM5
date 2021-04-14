@@ -1,24 +1,13 @@
-import { Container } from '@material-ui/core'
-import React, { useState, useEffect } from 'react'
+import React, {} from 'react'
+
 import NavBar from './components/NavBar'
-import TyreCard from './components/TyreCard'
+
+import TyreDisplay from './components/TyreDisplay'
 
 
 function App() {
 
-  const [tyres, setTyres] = useState('')
 
-  useEffect(() => {
-
-    fetch("http://localhost:3010/tyres").then((res) => {
-      return res.json()
-     }).then((data) => {
-       setTyres(data)
-       console.log(data)
-     })
-      
-    
-  }, [])
 
  
 
@@ -26,12 +15,8 @@ function App() {
     <div className="App">
       <NavBar />
       
-      <Container>
-        {tyres && tyres.map((tyre) => {
-            return <TyreCard tyre = {tyre} />
-          })
-        }
-      </Container>
+      <TyreDisplay />
+      
       
     </div>
   );

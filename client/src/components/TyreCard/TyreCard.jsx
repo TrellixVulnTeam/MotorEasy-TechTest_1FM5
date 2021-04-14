@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from '@material-ui/core'
+import { Card, Typography } from '@material-ui/core'
 
 const TyreCard = (props) => {
 
@@ -7,8 +7,9 @@ const TyreCard = (props) => {
 
     return (
         <Card>
-            <h1>{tyre.title}</h1>
-            <img src={tyre.img}></img>
+            <Typography variant="h4">{tyre.brand}</Typography>
+            <Typography variant="h4">{tyre.title}</Typography>
+            <img src={tyre.img} alt="Tyre"></img>
 
         </Card>
     )

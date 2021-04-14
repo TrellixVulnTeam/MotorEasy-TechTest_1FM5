@@ -33,6 +33,23 @@ app.get('/tyres', (req, res) => {
     })
 })
 
+app.get()
 
+app.get('/add-tyre', (req, res) =>{
+    const tyre = new Tyre({
+        brand: 'Avon',
+        title: 'Best tyre ever u dunknow',
+        size: "34r, 56r, 5",
+        price: 34.50
+    })
+
+    tyre.save()
+    .then((result)=>{
+        res.send(result)
+    })
+    .catch((err) => {
+        console.log("Error")
+    })
+})
 
 
