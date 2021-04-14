@@ -29,27 +29,19 @@ app.get('/tyres', (req, res) => {
         res.send(result)
     })
     .catch((err) => {
-        res.send(console.log("error"))
+        res.send(err)
     })
 })
 
-app.get()
-
-app.get('/add-tyre', (req, res) =>{
-    const tyre = new Tyre({
-        brand: 'Avon',
-        title: 'Best tyre ever u dunknow',
-        size: "34r, 56r, 5",
-        price: 34.50
-    })
-
-    tyre.save()
-    .then((result)=>{
+app.get('/brands', (req, res) => {
+    Brand.find()
+    .then((result) => {
         res.send(result)
     })
     .catch((err) => {
-        console.log("Error")
+        res.send(err)
     })
 })
+
 
 
