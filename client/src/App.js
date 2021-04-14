@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
 
-  fetch("http://localhost:3000/tyres").then((res) => {
+  fetch("http://localhost:3010/tyres").then((res) => {
    return res.json()
   }).then((data) => {
     console.log(data)
