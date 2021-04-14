@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Typography } from '@material-ui/core'
+import NumberFormat from 'react-number-format'
 
 const TyreCard = (props) => {
 
@@ -12,11 +13,13 @@ const TyreCard = (props) => {
     console.log(brandForTyre)
 
     return (
-        <Card>
+        <Card raised>
             <img src={brandForTyre[0].logo} alt={brandForTyre[0].title}></img>
-            <Typography variant="h5">{tyre.brand} {tyre.title}</Typography>
-            <Typography>{tyre.size[0]}/{tyre.size[1]} R{tyre.size[2]}</Typography>
-            <Typography>£{tyre.price}</Typography>
+            <Typography align="center" variant="h5">{tyre.brand} {tyre.title}</Typography>
+            <Typography align="center">{tyre.size[0]}/{tyre.size[1]} R{tyre.size[2]}</Typography>
+            <Typography align="center">
+                <NumberFormat decimalScale={2} fixedDecimalScale displayType="text" prefix="£" value={tyre.price} />
+            </Typography>
             <img src={tyre.img} alt="Tyre"></img>
             
 
