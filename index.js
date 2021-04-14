@@ -45,6 +45,16 @@ app.get('/tyres/:brand', (req, res) => {
     })
 })
 
+app.get('tyres/:title', (req, res) => {
+    const title = req.params.title
+
+    Tyre.find({
+        title: title
+    }).then((result) => {
+        res.send(result)
+    })
+})
+
 app.get('/brands', (req, res) => {
      Brand.find()
     .then((result) => {
