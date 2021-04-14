@@ -1,10 +1,11 @@
 import React from 'react'
+import styles from './NavBar.module.scss'
 
 const NavBar = () => {
     return (
-        <div>
-            
-        </div>
+        <nav className={styles.navBar}>
+            <h2>Tyres Direct</h2>
+        </nav>
     )
 }
 
