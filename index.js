@@ -52,7 +52,8 @@ app.get('/tyres/title/:title', (req, res) => {
     const title = req.params.title
 
     Tyre.find({
-        title: title
+         title: {"$regex": title, "$options": "i"},
+        
     }).then((result) => {
         res.send(result)
     })

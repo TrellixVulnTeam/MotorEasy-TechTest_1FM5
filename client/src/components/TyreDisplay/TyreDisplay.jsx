@@ -8,14 +8,18 @@ const TyreDisplay = (props) => {
 
     const [tyres, setTyres] = useState('')
 
-    useEffect(() => {
-  
-      fetch("http://localhost:3010/tyres").then((res) => {
+    const getAllTyres = () => {
+        fetch("http://localhost:3010/tyres").then((res) => {
         return res.json()
        }).then((data) => {
          setTyres(data)
          console.log(data)
        })
+    }
+
+    useEffect(() => {
+  
+        getAllTyres()
 
              
     }, [])
@@ -37,6 +41,8 @@ const TyreDisplay = (props) => {
             }).then((data) => {
                 setTyres(data)
             })
+        } else if(e.target.value === ''){
+            getAllTyres()
         }
        
     }
