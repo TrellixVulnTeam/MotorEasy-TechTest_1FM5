@@ -14,9 +14,11 @@ const TyreCard = (props) => {
     return (
         <Card>
             <img src={brandForTyre[0].logo} alt={brandForTyre[0].title}></img>
-            <Typography variant="h4">{tyre.brand} {tyre.title}</Typography>
-            
+            <Typography variant="h5">{tyre.brand} {tyre.title}</Typography>
+            <Typography>{tyre.size[0]}/{tyre.size[1]} R{tyre.size[2]}</Typography>
+            <Typography>£{tyre.price}</Typography>
             <img src={tyre.img} alt="Tyre"></img>
+            
 
         </Card>
     )
