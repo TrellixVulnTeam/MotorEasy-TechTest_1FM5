@@ -3,12 +3,19 @@ import { Card, Typography } from '@material-ui/core'
 
 const TyreCard = (props) => {
 
-    const tyre = props.tyre
+    const {tyre, brands} = props
+   
+   const brandForTyre = brands.filter((brand) => {
+        return brand.title === tyre.brand
+    })
+
+    console.log(brandForTyre)
 
     return (
         <Card>
-            <Typography variant="h4">{tyre.brand}</Typography>
-            <Typography variant="h4">{tyre.title}</Typography>
+            <img src={brandForTyre[0].logo} alt={brandForTyre[0].title}></img>
+            <Typography variant="h4">{tyre.brand} {tyre.title}</Typography>
+            
             <img src={tyre.img} alt="Tyre"></img>
 
         </Card>

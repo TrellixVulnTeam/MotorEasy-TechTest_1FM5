@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import "dotenv/config.js"
 import cors from 'cors'
 import { Tyre } from "./models/tyres.js"
+import { Brand } from "./models/brands.js"
 
 
 
@@ -34,7 +35,7 @@ app.get('/tyres', (req, res) => {
 })
 
 app.get('/brands', (req, res) => {
-    Brand.find()
+     Brand.find()
     .then((result) => {
         res.send(result)
     })

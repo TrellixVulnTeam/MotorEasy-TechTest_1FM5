@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import TyreCard from '../TyreCard'
 import { Container, Grid } from '@material-ui/core'
 
-const TyreDisplay = () => {
+const TyreDisplay = (props) => {
 
     const [tyres, setTyres] = useState('')
 
@@ -14,8 +14,8 @@ const TyreDisplay = () => {
          setTyres(data)
          console.log(data)
        })
-        
-      
+
+             
     }, [])
 
     return (
@@ -25,7 +25,7 @@ const TyreDisplay = () => {
             {tyres && tyres.map((tyre) => {
                 return (
                   <Grid item xs={4} > 
-                    <TyreCard tyre = {tyre} />
+                    <TyreCard brands={props.brands} tyre = {tyre} />
                   </Grid>
                 )
               })
