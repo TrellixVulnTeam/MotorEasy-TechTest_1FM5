@@ -1,10 +1,12 @@
 import React from 'react'
+import { Card } from '@material-ui/core'
 
 const TyreCard = () => {
     return (
-        <div>
+        <Card>
             
-        </div>
+
+        </Card>
     )
 }
 
