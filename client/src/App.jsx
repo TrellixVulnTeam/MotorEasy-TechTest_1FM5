@@ -1,3 +1,4 @@
+import { Container } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import TyreCard from './components/TyreCard'
@@ -24,12 +25,13 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-          
-      {tyres && tyres.map((tyre) => {
-          return <TyreCard tyre = {tyre} />
-        })
-      }
-    
+      
+      <Container>
+        {tyres && tyres.map((tyre) => {
+            return <TyreCard tyre = {tyre} />
+          })
+        }
+      </Container>
       
     </div>
   );
