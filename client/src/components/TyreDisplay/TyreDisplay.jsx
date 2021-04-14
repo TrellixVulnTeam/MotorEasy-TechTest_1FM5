@@ -21,7 +21,7 @@ const TyreDisplay = (props) => {
     return (
 
         <Container>
-          <Grid container>
+          <Grid container spacing={2}>
             {tyres && tyres.map((tyre) => {
                 return (
                   <Grid item xs={4} > 
