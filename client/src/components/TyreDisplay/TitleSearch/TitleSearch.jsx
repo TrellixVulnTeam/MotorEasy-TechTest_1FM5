@@ -4,6 +4,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export default function TitleSearch(props) {
   return (
+    
     <Autocomplete
        
         options={props.tyres}

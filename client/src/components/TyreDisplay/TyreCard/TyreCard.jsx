@@ -7,12 +7,15 @@ const TyreCard = (props) => {
 
     const {tyre, brands} = props
    
+    // assign relevant brand to tyre 
    const brandForTyre = brands.filter((brand) => {
         return brand.title === tyre.brand
     })
 
     return (
+
         <Card raised>
+
             <img className={styles.tyreCardImg} src={brandForTyre[0].logo} alt={brandForTyre[0].title}></img>
             <Typography style={{fontWeight:"bold"}}  gutterBottom align="center" variant="h5">{tyre.title}</Typography>
             <Typography  gutterBottom align="center">Size:  {tyre.size[0]}/{tyre.size[1]} R{tyre.size[2]}</Typography>

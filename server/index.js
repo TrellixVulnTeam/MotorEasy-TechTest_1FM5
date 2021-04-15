@@ -3,19 +3,13 @@ import mongoose from 'mongoose'
 import "dotenv/config.js"
 import cors from 'cors'
 import { Tyre } from "./models/tyres.js"
-import { Brand } from "./server/models/brands.js.js"
-
-
-
-
-
-
+import { Brand } from "./models/brands.js"
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 
-// connect to mongodb
+// connect to mongodb, .env would normally not be in repo
 const dbURI = process.env.MONGO_URI
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})

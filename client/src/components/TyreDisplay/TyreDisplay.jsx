@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import TyreCard from '../TyreCard'
 import { Container, Grid, Typography } from '@material-ui/core'
 import BrandSearch from './BrandSearch'
 import TitleSearch from './TitleSearch'
+import TyreCard from './TyreCard'
 
 const TyreDisplay = (props) => {
 
@@ -12,12 +12,13 @@ const TyreDisplay = (props) => {
     const getAllTyres = () => {
         fetch("http://localhost:3010/tyres").then((res) => {
         return res.json()
-       }).then((data) => {
+       })
+       .then((data) => {
         // sorts returned tyres in brand order
-        data.sort((a, b) => {
-            if (a.brand < b.brand) return -1
-            if (a.brand > b.brand) return 1
-            return 0
+            data.sort((a, b) => {
+                if (a.brand < b.brand) return -1
+                if (a.brand > b.brand) return 1
+                return 0
             })
          //set tyres state to the return tyres
          setTyres(data)
@@ -36,7 +37,8 @@ const TyreDisplay = (props) => {
 
          fetch(`http://localhost:3010/tyres/${e.target.value}`).then((res) => {
              return res.json()
-         }).then((data) => {
+         })
+         .then((data) => {
              // set tyres to all tyres from selected brand
              setTyres(data)
          })
@@ -45,9 +47,11 @@ const TyreDisplay = (props) => {
     // use value of child to fetch all tyres with matching title
     const getSelectedTyre = (e) => {
         if(e.target.value !== ''){ 
-            fetch(`http://localhost:3010/tyres/title/${e.target.value}`).then((res) => {
+            fetch(`http://localhost:3010/tyres/title/${e.target.value}`)
+            .then((res) => {
                 return res.json()
-            }).then((data) => {
+            })
+            .then((data) => {
                 setTyres(data)
             })
         } else if(e.target.value === ''){
@@ -66,21 +70,23 @@ const TyreDisplay = (props) => {
               <Grid item xs={12} md={4} lg={3}>
                     <BrandSearch align="center" getSelectedBrand = {getSelectedBrand} brands = {props.brands}/>
                 </Grid>
+
                 <Grid item xs={0} md={1}>
                     <Typography color="textPrimary" style={{marginTop:"20px", fontWeight:"bold"}} align="center">OR</Typography>
                 </Grid>
+
                 <Grid item xs={12} md={6} lg={5}>
-                    <TitleSearch getSelectedTyre = {getSelectedTyre} 
-                tyres = {tyres} />
-            </Grid>
+                    <TitleSearch getSelectedTyre = {getSelectedTyre} tyres = {tyres} />
+                </Grid>
+
             {tyres && tyres.map((tyre) => {
                 return (
-                  <Grid item md={4} sm={6} xs={12} > 
-                    <TyreCard brands = {props.brands} tyre = {tyre} />
-                  </Grid>
+                    <Grid item md={4} sm={6} xs={12} > 
+                        <TyreCard brands = {props.brands} tyre = {tyre} />
+                    </Grid>
                 )
-              })
-            }
+            })}
+            
           </Grid>
       </Container>
     )
