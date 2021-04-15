@@ -4,7 +4,7 @@
 
 <p>Ensure you have node installed in order to run a server locally, installation instructions can be found <a href="https://nodejs.org/en/download/">here</a></p>
 
-<p>Once node is installed, clone this repo by opening your favourite terminal and using the follow command "git clone https://github.com/ashryan/MotorEasy-TechTest"</p>
+<p>Once node is installed, clone this repo by opening your favourite terminal and using the following command "git clone https://github.com/ashryan/MotorEasy-TechTest"</p>
 
 <p>Great, once you've cloned the repo you can cd into it by typing "cd MotorEasy-TechTest"</p>
 
@@ -27,7 +27,7 @@ You should now have a local client up and running</p>
 <h2>Requirements</h2>
 
 <h3>Database</h3> 
-<p> I created a mongodb database with two collections, Tyres and Brands. </p>
+<p> I created a MongoDB database with two collections, Tyres and Brands. </p>
 
 <img src="https://i.ibb.co/sVn5ds4/mongo-brands.png" />
 
