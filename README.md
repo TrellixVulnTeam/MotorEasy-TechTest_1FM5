@@ -48,7 +48,7 @@ You should now have a local client up and running</p>
 <p>I created a listing web page using React that displays the tyres fetched from the database.</p>
 <img src="https://i.ibb.co/CvnY7Bs/tyre-listing.png" />
 
-<h4>Add some filters such as title, size, brand<h4>
+<h4>Add some filters such as title, size, brand</h4>
 <p>I included filters for title and brand. When filtering the database is queried with a new fetch request and results are returned based on the given param. Another approach would have been to only fetch the whole tyre collection on intial page load and then used JavaScript methods such as .filter and .reduce to get the tyres matching a given condition, however given the relative small size of the database, the lack of demand on the server and the opportunity to practice express/node, I opted for the former option. In a production enviroment, I'm sure this architectural decision would need to be made carefully.</p>
 
 <img src="https://i.ibb.co/LkvMC56/filter-title.png"/>
