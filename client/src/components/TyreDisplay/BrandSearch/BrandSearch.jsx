@@ -1,29 +1,21 @@
 import React from 'react'
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 
-const BrandSearch = (props) => {
 
-    const {brands, getSelectedBrand} = props
-      
-     
-      
-
-    
-
+export default function BrandSearch(props) {
     return (
-        <div>
-            <label htmlFor="brands">Select Brand</label>
-            <select onChange={getSelectedBrand} name="brands">
-                <option value="Bridgestone">Bridgestone</option>
-                <option value="Continental">Continental</option>
-                <option value="Dunlop">Dunlop</option>
-                <option value="Goodyear">Goodyear</option>
-                <option value="Michelin">Michelin</option>
-                <option value="Pirelli">Pirelli</option> 
-            </select>
-        </div>
+      <Autocomplete
+         
+          options={props.brands}
+          onSelect={props.getSelectedBrand}
+          getOptionLabel={(option) => option.title}
+          getOptionSelected={(option, value) => option.title === value.title}
+          style={{ width: 300 }}
+          renderInput={(params) => <TextField {...params} label="Search By Brand" variant="outlined" />}
+      />
+    );
+  }
 
-    )
-}
 
-export default BrandSearch

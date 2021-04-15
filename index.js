@@ -41,7 +41,7 @@ app.get('/tyres/:brand', (req, res) => {
     const brand = req.params.brand
 
     Tyre.find({
-        brand: brand
+        brand: {"$regex": brand, "$options": "i"}
     }).then((result) => {
         res.send(result)
     })
@@ -52,7 +52,7 @@ app.get('/tyres/title/:title', (req, res) => {
     const title = req.params.title
 
     Tyre.find({
-         title: {"$regex": title, "$options": "i"},
+         title: {"$regex": title, "$options": "i"}
         
     }).then((result) => {
         res.send(result)
