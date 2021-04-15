@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import "dotenv/config.js"
 import cors from 'cors'
 import { Tyre } from "./models/tyres.js"
-import { Brand } from "./models/brands.js"
+import { Brand } from "./server/models/brands.js.js"
 
 
 
@@ -24,11 +24,24 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
     console.log("connected to db")
 }).catch((err) => console.log("err"))
 
+// get all tyres from db
 app.get('/tyres', (req, res) => {
+
+    Tyre.find()
+    .then((response) => {
+        res.send(response)
+    })
+    .catch((err) => {
+        console.log(res)
+    })
+})
+
+// get all tyres paginated
+app.get('/tyres/pages', (req, res) => {
     const pageSize = 9
     const page = parseInt(req.query.page || "0")
     let totalPages = 0
-    
+
     //count amount of Tyre docs in DB
     Tyre.countDocuments().then((res) => {
        totalPages = res
@@ -44,16 +57,13 @@ app.get('/tyres', (req, res) => {
             res.send({
                 totalPages: Math.ceil(totalPages / pageSize),
                 result
-            
-            })
+             })
         })
         .catch((err) => {
             res.send(err)
         })
     })
-
-
-    })
+})
     
 
 //query db for all tyres by brand param
