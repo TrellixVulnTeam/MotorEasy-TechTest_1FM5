@@ -25,9 +25,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 }).catch((err) => console.log("err"))
 
 app.get('/tyres', (req, res) => {
+    const pageSize = 9
     const page = parseInt(req.query.page || "0")
     Tyre.find()
-        .limit(9)
+        .limit(pageSize).skip(pageSize * page)
     .then((result) => {
         res.send(result)
     })
