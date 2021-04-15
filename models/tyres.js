@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+
 
 const Schema = mongoose.Schema;
 
@@ -23,6 +24,8 @@ const tyresSchema = new Schema({
         type:String
     }
 })
+
+
 
 export const Tyre = mongoose.model('Tyre', tyresSchema)
 
