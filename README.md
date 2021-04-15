@@ -34,21 +34,21 @@ You should now have a local client up and running</p>
 <img src="https://i.ibb.co/wNtSm52/mongodb-tyres.png" />
  
  <h3>Backend</h3>
- <p>Create an API for providing tyre information.</p>
+ <h4>Create an API for providing tyre information.</h4>
  <p>I created an API with 5 endpoints for returning data from the database. <br> "/tyres" returns all tyres in the collection, useful for using in combination with a React useEffect hook in order to request all results on intial page load. <br> "/tyres/:brand" returns all tyres from a selected brand, for example, "/tyres/dunlop" returns all tyres in the db with the brand of dunlop. <br> "/tyres/title/:title" returns tyres in the db that match or partially match the provided param. For example, "/tyres/title/b" would return all tyres with a title beginning with the letter "b". In order to get partial string querying working with mongo I utilised Regex. 
  <br>"/brands" returns all the brands in the brands collection.</p>
 
-  <p>Optional Tyre API can accept pagination request</p>
+  <h4>Optional Tyre API can accept pagination request</h4>
   <p>I created a "/tyres/pages" endpoint that when queried with a page number returns a limit of 9 documents from the Tyres collection. It also returns the total amount of pages. For example, "/tyres/pages/?page=1" would return the second set of 9 tyres from the tyres collection.<br>Unfortunately, I was unable to integrate this into the client-side in time, however I have included a screenshot from postman to show it working</p>
 
 <img src="https://i.ibb.co/BPmxRBt/post-pagination.png" />
 
 <h3>Client-side</h3>
-<p>Create a listing web page to connect to the API</p>
+<h4>Create a listing web page to connect to the API</h4>
 <p>I created a listing web page using React that displays the tyres fetched from the database.</p>
 <img src="https://i.ibb.co/CvnY7Bs/tyre-listing.png" />
 
-<p>Add some filters such as title, size, brand<p>
+<h4>Add some filters such as title, size, brand<h4>
 <p>I included filters for title and brand. When filtering the database is queried with a new fetch request and results are returned based on the given param. Another approach would have been to only fetch the whole tyre collection on intial page load and then used JavaScript methods such as .filter and .reduce to get the tyres matching a given condition, however given the relative small size of the database, the lack of demand on the server and the opportunity to practice express/node, I opted for the former option. In a production enviroment, I'm sure this architectural decision would need to be made carefully.</p>
 
 <img src="https://i.ibb.co/LkvMC56/filter-title.png"/>
