@@ -67,7 +67,7 @@ const TyreDisplay = (props) => {
                     <BrandSearch align="center" getSelectedBrand = {getSelectedBrand} brands = {props.brands}/>
                 </Grid>
                 <Grid item xs={0} md={1}>
-                    <Typography style={{marginTop:"20px"}} align="center">OR</Typography>
+                    <Typography color="textPrimary" style={{marginTop:"20px", fontWeight:"bold"}} align="center">OR</Typography>
                 </Grid>
                 <Grid item xs={12} md={6} lg={5}>
                     <TitleSearch getSelectedTyre = {getSelectedTyre} 

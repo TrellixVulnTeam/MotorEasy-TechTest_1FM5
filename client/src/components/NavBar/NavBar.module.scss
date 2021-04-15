@@ -1,6 +1,15 @@
 .navBar{
     height:10%;
     width:100%;
-    background-color: #9ea7aa;
-    color:white;
+    background-color:#616161;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+    .navHeader {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        
+
+    }
 }

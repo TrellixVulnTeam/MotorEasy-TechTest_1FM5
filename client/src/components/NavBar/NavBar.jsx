@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './NavBar.module.scss'
+import { Typography } from '@material-ui/core'
 
 const NavBar = () => {
     return (
         <nav className={styles.navBar}>
-            <h2>Tyres Direct</h2>
+            <Typography className={styles.navHeader} color="white" variant="h1">Tyres Direct</Typography>
         </nav>
     )
 }
