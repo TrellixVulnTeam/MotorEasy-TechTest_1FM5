@@ -12,7 +12,7 @@
 
 <img src="https://i.ibb.co/Tg4vccn/startserver.png" />
 
-<p>The local server should now be up and run, next open a new terminal and cd back into MotorEasy-TechTest. To get the client side of the app running cd into the client directory by typing "cd client" and run "npm install" to get all the dependancies. Once this is done type "npm start".
+<p>The local server should now be up and running, next open a new terminal and cd back into MotorEasy-TechTest. To get the client side of the app running cd into the client directory by typing "cd client" and run "npm install" to get all the dependancies. Once this is done type "npm start".
 You should now have a local client up and running</p>
 
 <h2>Additional Technologies Used</h2>
