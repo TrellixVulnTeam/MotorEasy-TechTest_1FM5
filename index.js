@@ -27,18 +27,36 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 app.get('/tyres', (req, res) => {
     const pageSize = 9
     const page = parseInt(req.query.page || "0")
-    Tyre.find()
+    let totalPages = 0
+    
+    //count amount of Tyre docs in DB
+    Tyre.countDocuments().then((res) => {
+       totalPages = res
+    })
+    
+    .then(() => {
+        //find all Tyre docs
+        Tyre.find()
+        //limit response to pageSize
         .limit(pageSize).skip(pageSize * page)
-    .then((result) => {
-        res.send(result)
+        //send back totalPages and tyres
+        .then((result) => {
+            res.send({
+                totalPages: Math.ceil(totalPages / pageSize),
+                result
+            
+            })
+        })
+        .catch((err) => {
+            res.send(err)
+        })
     })
-    .catch((err) => {
-        res.send(err)
+
+
     })
-})
+    
 
-
-
+//query db for all tyres by brand param
 app.get('/tyres/:brand', (req, res) => {
 
     const brand = req.params.brand
@@ -50,7 +68,7 @@ app.get('/tyres/:brand', (req, res) => {
     })
 })
 
-
+//query db for all tyres with matching/partial matching title
 app.get('/tyres/title/:title', (req, res) => {
     const title = req.params.title
 
@@ -62,7 +80,7 @@ app.get('/tyres/title/:title', (req, res) => {
     })
 })
 
-
+//return all brands
 app.get('/brands', (req, res) => {
      Brand.find()
     .then((result) => {
