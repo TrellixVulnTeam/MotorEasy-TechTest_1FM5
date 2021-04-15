@@ -43,6 +43,7 @@ You should now have a local client up and running</p>
 
 <img src="https://i.ibb.co/BPmxRBt/post-pagination.png" />
 
+<h3>Client-side</h3>
 <p>Create a listing web page to connect to the API</p>
 <p>I created a listing web page using React that displays the tyres fetched from the database.</p>
 <img src="https://i.ibb.co/CvnY7Bs/tyre-listing.png" />
