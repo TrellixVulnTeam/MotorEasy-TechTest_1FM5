@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Typography } from '@material-ui/core'
 import NumberFormat from 'react-number-format'
+import styles from './TyreCard.module.scss'
 
 const TyreCard = (props) => {
 
@@ -12,13 +13,13 @@ const TyreCard = (props) => {
 
     return (
         <Card raised>
-            <img src={brandForTyre[0].logo} alt={brandForTyre[0].title}></img>
-            <Typography align="center" variant="h5">{tyre.title}</Typography>
-            <Typography align="center">Size:  {tyre.size[0]}/{tyre.size[1]} R{tyre.size[2]}</Typography>
-            <Typography align="center">
+            <img className={styles.tyreCardImg} src={brandForTyre[0].logo} alt={brandForTyre[0].title}></img>
+            <Typography style={{fontWeight:"bold"}}  gutterBottom align="center" variant="h5">{tyre.title}</Typography>
+            <Typography  gutterBottom align="center">Size:  {tyre.size[0]}/{tyre.size[1]} R{tyre.size[2]}</Typography>
+            <Typography gutterBottom align="center">
                 <NumberFormat decimalScale={2} fixedDecimalScale displayType="text" prefix="Price: £" value={tyre.price} />
             </Typography>
-            <img src={tyre.img} alt="Tyre"></img>
+            <img className={styles.tyreCardImg} src={tyre.img} alt="Tyre"></img>
             
 
         </Card>
