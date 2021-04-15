@@ -2,7 +2,7 @@
 
 <h2>Installation</h2>
 
-<p>Ensure you have node installed in order to run a server locally, installion instructions can be found <a href="https://nodejs.org/en/download/">here</a></p>
+<p>Ensure you have node installed in order to run a server locally, installation instructions can be found <a href="https://nodejs.org/en/download/">here</a></p>
 
 <p>Once node is installed, clone this repo by opening your favourite terminal and using the follow command "git clone https://github.com/ashryan/MotorEasy-TechTest"</p>
 
