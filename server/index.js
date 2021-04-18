@@ -75,7 +75,7 @@ app.get('/tyres/:brand', (req, res) => {
 //query db for all tyres with matching/partial matching title
 app.get('/tyres/title/:title', (req, res) => {
     const title = req.params.title
-
+    //uses regex for partial string match
     Tyre.find({
          title: {"$regex": title, "$options": "i"}
         
