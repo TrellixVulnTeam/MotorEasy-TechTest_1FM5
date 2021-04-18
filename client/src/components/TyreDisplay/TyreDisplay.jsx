@@ -60,8 +60,6 @@ const TyreDisplay = (props) => {
        
     }
 
-
-
     return (
 
         <Container>
@@ -71,7 +69,7 @@ const TyreDisplay = (props) => {
                     <BrandSearch align="center" getSelectedBrand = {getSelectedBrand} brands = {props.brands}/>
                 </Grid>
 
-                <Grid item xs={0} md={1}>
+                <Grid item xs={false} md={1}>
                     <Typography color="textPrimary" style={{marginTop:"20px", fontWeight:"bold"}} align="center">OR</Typography>
                 </Grid>
 
@@ -81,8 +79,8 @@ const TyreDisplay = (props) => {
 
             {tyres && tyres.map((tyre) => {
                 return (
-                    <Grid item md={4} sm={6} xs={12} > 
-                        <TyreCard brands = {props.brands} tyre = {tyre} />
+                    <Grid key = {tyre._id} item md={4} sm={6} xs={12} > 
+                        <TyreCard brands = {props.brands} tyre = {tyre}  />
                     </Grid>
                 )
             })}
