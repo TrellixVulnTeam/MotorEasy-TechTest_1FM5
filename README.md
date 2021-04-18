@@ -55,7 +55,8 @@ You should now have a local client up and running</p>
 <img src="https://i.ibb.co/kSLysTV/filter-brand.png" />
 
 <h4>Testing</h4>
-<p>I was able to add a Jest test in order to test the static rendering of the title in NavBar. As all other components were dependant on async fetch requests these proved a lot harder to test. Upon attempting to test I would be met with undefined errors due to the promise not being resolved when the test ran. I am currently researching solutions to this, and hope to be able to implement this is my future work</p>
+<p>I was able to add a Jest test in order to test the static rendering of the title in NavBar. As all other components were dependant on async fetch requests these proved a lot harder to test. Upon attempting to test I would be met with undefined errors due to the promise not being resolved when the test ran. I am currently researching solutions to this, and hope to be able to implement this is my future work<br>
+Update - After doing some research, I've found a workaround for this issue which involves using a SetTimeout to run the test after the promise has resolved. I recognise that this is not the most optimal solution, however it has allowed me to add some additional tests. These tests can be run by running the command "NPM run test" </p>
 
 
 
